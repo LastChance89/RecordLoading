@@ -1,8 +1,10 @@
-package main.java.batch;
+package main.java.batch.mapper;
 
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.validation.BindException;
+
+import main.java.model.Record;
 
 public class RecordFieldMapper implements FieldSetMapper<Record> {
 

@@ -1,46 +1,48 @@
-package main.java.batch;
+package main.java.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 //@Entity
 //@Table(name = "RECORDS")
 public class Record {
 	
 	//our composite key. 
-//	@Id
+	@Id
 	private RecordKey recordKey;
 	
-//	@Column(name="TYPE")
+	@Column(name="TYPE")
 	private String type; 
-//	@Column(name = "POWER_USAGE")
+	@Column(name = "POWER_USAGE")
 	private Double powerUsage;
-//	@Column(name="UNITS")
+	@Column(name="UNITS")
 	private String units;
-//	@Column(name="COST")
+	@Column(name="COST")
 	private Double cost;
-//	@Column(name="NOTES")
+	@Column(name="NOTES")
 	private String note;
 	
-//	@NotNull
-//	@Column(name = "account_number")
+	@NotNull
+	@Column(name = "account_number")
 	public Long accountnumber;
 	
-//	@NotNull
-//	@Column(name = "record_date")
+	@NotNull
+	@Column(name = "record_date")
 	public Date recordDate; 
 	
-//	@NotNull
-//	@Column(name = "start_time")
+	@NotNull
+	@Column(name = "start_time")
 	public String startTime; 
 	
-//	@NotNull
-//	@Column(name = "end_time")
+	@NotNull
+	@Column(name = "end_time")
 	public String endTime;
 	
 	public Record() {	
 	}
-	
-//" VALUES (:type, :recordDate,:startTime,:endTime,:powerUsage, units, cost, note)");
+
 
 	public Record(String type, Date recordDate, String startTime, String endTime,Double powerUsage,String units, 
 			Double cost,String note) {

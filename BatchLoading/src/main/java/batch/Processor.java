@@ -2,6 +2,8 @@ package main.java.batch;
 
 import org.springframework.batch.item.ItemProcessor;
 
+import main.java.model.Record;
+
 public class Processor implements ItemProcessor<Record, Record>{
 
 	@Override

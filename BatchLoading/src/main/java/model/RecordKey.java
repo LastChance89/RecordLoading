@@ -1,26 +1,28 @@
-package main.java.batch;
+package main.java.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 
-//@Embeddable
-public class RecordKey implements Serializable{
+@Embeddable
+public class RecordKey{
 	
-//	@NotNull
-//	@Column(name = "account_number")
+	@NotNull
+	@Column(name = "account_number")
 	public Long accountnumber;
 	
-//	@NotNull
-//	@Column(name = "record_date")
+	@NotNull
+	@Column(name = "record_date")
 	public Date recordDate; 
 	
-//	@NotNull
-//	@Column(name = "start_time")
+	@NotNull
+	@Column(name = "start_time")
 	public String startTime; 
 	
-//	@NotNull
-//	@Column(name = "end_time")
+	@NotNull
+	@Column(name = "end_time")
 	public String endTime;
 	
 	public RecordKey(Long accountNumber) {
