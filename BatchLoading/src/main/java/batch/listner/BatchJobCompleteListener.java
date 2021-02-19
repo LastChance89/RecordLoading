@@ -8,6 +8,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class BatchJobCompleteListener extends JobExecutionListenerSupport  {
 
+	public BatchJobCompleteListener() {
+		
+	}
+	
+	
 	@Override
 	public void afterJob(JobExecution jobExecution) {
 		if(jobExecution.getStatus() == BatchStatus.COMPLETED) {

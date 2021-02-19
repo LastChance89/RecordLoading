@@ -13,46 +13,20 @@ import main.java.batch.listner.BatchJobCompleteListener;
 import main.java.batch.step.RecordStep;
 
 @Component
-public class RecordLoadJob implements Job{
+public class RecordLoadJob{
 	
 	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
 	@Autowired
 	private RecordStep recordStep;
 	
-	public Job csvFileToDatabaseJob(BatchJobCompleteListener listener) {
+	public Job csvFileToDatabaseJob() {
 		return jobBuilderFactory.get("csvFileToDatabaseJob").
 				incrementer(new RunIdIncrementer())
-				.listener(listener)
+				.listener(new BatchJobCompleteListener())
 				.flow(recordStep.csvFileToDatabaseStep())
 				.end()
 				.build();
-	}
-
-	@Override
-	public String getName() {
-		return "RecordLoadJob";
-	}
-
-	@Override
-	public boolean isRestartable() {
-		return false;
-	}
-
-	@Override
-	public void execute(JobExecution execution) {
-		
-		
-	}
-
-	@Override
-	public JobParametersIncrementer getJobParametersIncrementer() {
-		return new RunIdIncrementer();
-	}
-
-	@Override
-	public JobParametersValidator getJobParametersValidator() {
-		return null;
 	}
 
 }
